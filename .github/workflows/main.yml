@@ -1,20 +1,14 @@
-name: Python Application
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    env:
+      python-version: 3.8
+      
+      # Add any other environment variables here if needed
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.python-version }}
 
     - name: Checkout code
       uses: actions/checkout@v2
