@@ -7,20 +7,28 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ env.python-version }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: npm install
+        run: npm install
+      - name: npm build
+        run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        path: frontend/build
+    
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.python-version }}
 
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-    - name: Run Python script
-      run: python3 interest.py -v
+      - name: Run Python script
+        run: python3 interest.py -v
