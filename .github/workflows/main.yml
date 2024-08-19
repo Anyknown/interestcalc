@@ -22,5 +22,5 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Run Python3 script
-      run: interest.py
+    - name: Run Python script
+      run: python3 interest.py
