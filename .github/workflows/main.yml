@@ -7,20 +7,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ env.python-version }}
-
-    - name: Checkout code
-      uses: actions/checkout@v2
-
     - name: Install dependencies
-      run: pip install -r requirements.txt
-
+      run: pip install -r requirements.txt -r requirements-actions.txt
     - name: Run Python script
       run: python3 interest.py
