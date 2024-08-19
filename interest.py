@@ -1,4 +1,5 @@
 import github
+import os
 
 def calculate_interest(principal, rate, years):
     interest_values = []
