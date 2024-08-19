@@ -15,4 +15,4 @@ principal = 1000
 rate = 0.05
 years = 10
 interest_values = calculate_interest(principal, rate, years)
-write_to_file('interest_values.txt', interest_values)
+write_to_file('.github/workflows/interest_values.txt', interest_values)
