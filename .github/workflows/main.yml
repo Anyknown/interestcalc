@@ -23,4 +23,4 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Run Python script
-      run: interest_calculator.py
+      run: interest.py
